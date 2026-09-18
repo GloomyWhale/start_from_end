@@ -1,5 +1,5 @@
 /* =========================================
-   1. ШРИФТЫ (JetBrains Mono)
+   1. ШРИФТЫ
    ========================================= */
 @font-face {
     font-family: 'GrimoireMono';
@@ -7,14 +7,12 @@
     font-weight: 500;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'GrimoireMono';
     src: url('assets/fonts/JetBrainsMono-ExtraBold.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'GrimoireMono';
     src: url('assets/fonts/JetBrainsMono-MediumItalic.ttf') format('truetype');
@@ -23,7 +21,7 @@
 }
 
 /* =========================================
-   2. БАЗА И ЦВЕТА
+   2. БАЗА
    ========================================= */
 body {
     margin: 0;
@@ -33,322 +31,85 @@ body {
     font-family: 'GrimoireMono', monospace;
     line-height: 1.5;
 }
-
-/* Единый стиль ссылок */
-a {
-    color: #7C18CE;
-    text-decoration: underline;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: #ffffff !important;
-}
-
-a:visited, a:active {
-    color: #4a0e78;
-}
+a { color: #7C18CE; text-decoration: underline; transition: color 0.2s ease; }
+a:hover { color: #ffffff !important; }
+a:visited, a:active { color: #4a0e78; }
 
 /* =========================================
    3. ЛЕЙАУТ
    ========================================= */
-.container {
-    max-width: 1664px;
-    margin: 0 auto;
-    background-color: #071114;
-    min-height: 100vh;
-}
-
-.text-column {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.step-section {
-    max-width: 768px;
-    margin: 3em auto;
-    padding: 0 20px;
-}
-
-/* Секция шага с fullWidth мемом */
-.step-section-full {
-    margin: 3em auto;
-}
+.container { max-width: 1664px; margin: 0 auto; background-color: #071114; min-height: 100vh; }
+.text-column { max-width: 768px; margin: 0 auto; padding: 20px; }
+.step-section-full { margin: 3em auto; }
 
 /* =========================================
    4. ТИПОГРАФИКА
    ========================================= */
-
-/* H1: Заголовки шагов/этапов */
-h1 {
-    font-weight: 800;
-    color: #ffffff;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    border-top: 2px solid #163E4F;
-    padding-top: 0.8em;
-    line-height: 1.1;
-    text-transform: uppercase;
-}
-
-/* H2: Основные разделы */
-h2 {
-    font-weight: 800;
-    color: #7C18CE;
-    margin-top: 2em;
-    margin-bottom: 0.8em;
-    border-top: 2px solid #163E4F;
-    padding-top: 0.8em;
-}
-
-h2 a {
-    font-weight: 800;
-}
-
-h2 + h2 {
-    margin-top: 1em;
-}
-
-/* H3: Задания, лайфхаки, промпты (БЕЗ линии!) */
-h3 {
-    font-weight: 800;
-    color: #ffffff; /* Белый цвет */
-    margin-top: 2em;
-    margin-bottom: 0.8em;
-}
-
-p {
-    margin-bottom: 1em;
-}
-
-strong, b {
-    color: #7C18CE;
-    font-weight: 800;
-}
-
-.note, i, em {
-    font-style: italic;
-    color: #08CCD5;
-    opacity: 0.9;
-}
-
-ul, ol {
-    margin-bottom: 1.5em;
-    padding-left: 1.5em;
-}
-
-li {
-    margin-bottom: 0.5em;
-}
-
-.final-divider {
-    border: none;
-    border-top: 2px solid #163E4F;
-    margin: 2em 0;
-}
+h1 { font-weight: 800; color: #ffffff; margin-top: 2em; margin-bottom: 0.5em; border-top: 2px solid #163E4F; padding-top: 0.8em; line-height: 1.1; text-transform: uppercase; }
+h2 { font-weight: 800; color: #7C18CE; margin-top: 2em; margin-bottom: 0.8em; border-top: 2px solid #163E4F; padding-top: 0.8em; }
+h3 { font-weight: 800; color: #ffffff; margin-top: 2em; margin-bottom: 0.8em; }
+p { margin-bottom: 1em; }
+strong, b { color: #7C18CE; font-weight: 800; }
+.note, i, em { font-style: italic; color: #08CCD5; opacity: 0.9; }
+ul, ol { margin-bottom: 1.5em; padding-left: 1.5em; }
+li { margin-bottom: 0.5em; }
+.final-divider { border: none; border-top: 2px solid #163E4F; margin: 2em 0; }
 
 /* =========================================
-   5. HERO-БЛОК И СТРЕЛКА
+   5. HERO & MEMES
    ========================================= */
-.hero-visual {
-    position: relative;
-    width: 100%;
-    line-height: 0;
-}
+.hero-visual { position: relative; width: 100%; line-height: 0; }
+.hero-image { width: 100%; height: auto; display: block; border-top: 2px solid #163E4F; border-bottom: 2px solid #163E4F; }
+.scroll-arrow { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 10; animation: bounce 2s infinite; line-height: 1; }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-15px); } 60% { transform: translateX(-50%) translateY(-7px); } }
 
-/* Картинка Hero-блока */
-.hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-top: 2px solid #163E4F;      /* Линия сверху */
-    border-bottom: 2px solid #163E4F;   /* Линия снизу */
-}
-
-.scroll-arrow {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    animation: bounce 2s infinite;
-    line-height: 1;
-}
-
-.scroll-arrow:hover {
-    opacity: 0.9;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-    40% { transform: translateX(-50%) translateY(-15px); }
-    60% { transform: translateX(-50%) translateY(-7px); }
-}
+.full-width-meme { width: 100%; margin: 0; }
+.meme-image { width: 100%; height: auto; display: block; border-top: 2px solid #163E4F; border-bottom: 2px solid #163E4F; }
 
 /* =========================================
-   6. МЕМ НА ВСЮ ШИРИНУ
+   6. КОМПОНЕНТЫ
    ========================================= */
-.full-width-meme {
-    width: 100%;
-    margin: 0;
-}
-
-/* Картинка мема в шагах */
-.meme-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-top: 2px solid #163E4F;      /* Линия сверху */
-    border-bottom: 2px solid #163E4F;   /* Линия снизу */
-}
-
-/* =========================================
-   7. КОМПОНЕНТЫ ШАГА 1
-   ========================================= */
-
-/* Блок промпта (аккордеон) */
-.prompt-block {
-    border: 2px solid #163E4F;
-    margin: 2em 0;
-    background: #0b1116;
-}
-
-.prompt-block summary {
-    padding: 1em;
-    cursor: pointer;
-    font-weight: 800;
-    color: #7C18CE;
-    list-style: none;
-    position: relative;
-}
-
-.prompt-block summary::after {
-    content: '+';
-    position: absolute;
-    right: 1em;
-}
-
-.prompt-block[open] summary::after {
-    content: '-';
-}
-
-.prompt-inner {
-    padding: 1em;
-    border-top: 2px solid #163E4F;
-}
+.prompt-block { border: 2px solid #163E4F; margin: 2em 0; background: #0b1116; }
+.prompt-block summary { padding: 1em; cursor: pointer; font-weight: 800; color: #7C18CE; list-style: none; position: relative; }
+.prompt-block summary::after { content: '+'; position: absolute; right: 1em; }
+.prompt-block[open] summary::after { content: '-'; }
+.prompt-inner { padding: 1em; border-top: 2px solid #163E4F; }
 
 .prompt-inner pre {
-    background: #000;
-    padding: 1em;
-    border: 2px solid #163E4F;
-    font-family: 'GrimoireMono', monospace;
-    color: #106085;
-    white-space: pre-wrap;
-    margin-bottom: 1em;
-    font-size: 1em;
-    line-height: 1.5;
-    
-    /* Жесткое ограничение без скролла */
-    max-height: 8em;       /* ~4-5 строк текста */
-    overflow: hidden;      /* Обрезаем всё лишнее, скроллбара нет */
+    background: #000; padding: 1em; border: 2px solid #163E4F; overflow-y: auto;
+    font-family: 'GrimoireMono', monospace; color: #106085; white-space: pre-wrap;
+    margin-bottom: 1em; font-size: 1em; line-height: 1.5; max-height: 8em; overflow: hidden;
 }
 
-/* ЕДИНЫЙ СТИЛЬ КНОПОК (Исправлено для одинаковой высоты) */
-.button-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: stretch; /* Растягивает все кнопки до высоты самой высокой */
-}
-
+.button-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: stretch; }
 .btn-action {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: 1px solid #7C18CE;
-    color: #7C18CE;
-    padding: 0 1.5em; /* Убираем вертикальный паддинг, высота задается через min-height */
-    text-decoration: none;
-    font-weight: 800;
-    font-family: 'GrimoireMono', monospace;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-size: 1em;
-    line-height: 1;
-    min-height: 48px; /* Фиксированная солидная высота */
-    box-sizing: border-box;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: transparent; border: 1px solid #7C18CE; color: #7C18CE;
+    padding: 0 1.5em; text-decoration: none; font-weight: 800;
+    font-family: 'GrimoireMono', monospace; cursor: pointer; transition: all 0.2s;
+    font-size: 1em; line-height: 1; min-height: 48px; box-sizing: border-box;
 }
+.btn-action:hover { background: #7C18CE; color: #ffffff; }
 
-/* Ховер как у Qwen: сплошной фиолетовый фон, белый текст */
-.btn-action:hover {
-    background: #7C18CE;
-    color: #ffffff;
-}
-
-/* Предупреждение внизу (сплошная линия) */
-.account-warning {
-    margin-top: 3em;
-    padding-top: 1em;
-    border-top: 2px solid #163E4F;
-}
+.account-warning { margin-top: 3em; padding-top: 1em; border-top: 2px solid #163E4F; }
 
 /* =========================================
-   8. FOOTER
+   7. ТАБЛИЦА РАЗВИЛКИ (ШАГ 4)
    ========================================= */
-.cta-footer {
-    text-align: center;
-    margin: 4em 0;
-    padding: 2em 0;
-    border-top: 2px solid #163E4F;
-}
+.fork-table { width: 100%; max-width: 768px; margin: 3em auto 0; border-collapse: collapse; border: 2px solid #163E4F; }
+.fork-cell { width: 50%; padding: 2em 1.5em; vertical-align: top; border-right: 2px solid #163E4F; }
+.fork-cell:last-child { border-right: none; }
 
-/* Кнопка футера в том же стиле */
-.cta-footer .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: 1px solid #7C18CE;
-    color: #7C18CE;
-    padding: 0 1.5em;
-    text-decoration: none;
-    font-weight: 800;
-    font-family: 'GrimoireMono', monospace;
-    transition: all 0.2s;
-    min-height: 48px;
-    box-sizing: border-box;
-}
+.fork-link { display: block; text-decoration: none; color: inherit; transition: all 0.2s; }
+.stability .fork-link { background: #FF00FF; color: #ffffff; }
+.stability .fork-link:hover { background: transparent; color: #FF00FF; }
+.warrior .fork-link { background: #7C18CE; color: #ffffff; }
+.warrior .fork-link:hover { background: transparent; color: #7C18CE; }
 
-.cta-footer .btn-outline:hover {
-    background: #7C18CE;
-    color: #ffffff;
-}
-
-/* =========================================
-   9. АДАПТИВ
-   ========================================= */
 @media (max-width: 768px) {
-    .container {
-        padding: 0;
-    }
-    
-    .scroll-arrow {
-        bottom: 15px;
-    }
-    
-    .scroll-arrow svg {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .button-row {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .btn-action {
-        width: 100%;
-    }
+    .fork-table, .fork-table tbody, .fork-table tr, .fork-table td { display: block; width: 100% !important; }
+    .fork-cell { border-right: none; border-bottom: 2px solid #163E4F; padding: 1.5em; }
+    .fork-cell:last-child { border-bottom: none; }
+    .button-row { flex-direction: column; align-items: stretch; }
+    .btn-action { width: 100%; }
 }
