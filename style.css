@@ -86,7 +86,7 @@ h1 {
     color: #ffffff;
     margin-top: 2em;
     margin-bottom: 0.5em;
-    border-top: 1px solid #163E4F;
+    border-top: 2px solid #163E4F;
     padding-top: 0.8em;
     line-height: 1.1;
     text-transform: uppercase;
@@ -98,7 +98,7 @@ h2 {
     color: #7C18CE;
     margin-top: 2em;
     margin-bottom: 0.8em;
-    border-top: 1px solid #163E4F;
+    border-top: 2px solid #163E4F;
     padding-top: 0.8em;
 }
 
@@ -144,7 +144,7 @@ li {
 
 .final-divider {
     border: none;
-    border-top: 1px solid #163E4F;
+    border-top: 2px solid #163E4F;
     margin: 2em 0;
 }
 
@@ -157,10 +157,13 @@ li {
     line-height: 0;
 }
 
+/* Картинка Hero-блока */
 .hero-image {
     width: 100%;
     height: auto;
     display: block;
+    border-top: 2px solid #163E4F;      /* Линия сверху */
+    border-bottom: 2px solid #163E4F;   /* Линия снизу */
 }
 
 .scroll-arrow {
@@ -191,11 +194,13 @@ li {
     margin: 0;
 }
 
+/* Картинка мема в шагах */
 .meme-image {
     width: 100%;
     height: auto;
     display: block;
-    border-bottom: 1px solid #163E4F;
+    border-top: 2px solid #163E4F;      /* Линия сверху */
+    border-bottom: 2px solid #163E4F;   /* Линия снизу */
 }
 
 /* =========================================
@@ -204,7 +209,7 @@ li {
 
 /* Блок промпта (аккордеон) */
 .prompt-block {
-    border: 1px solid #163E4F;
+    border: 2px solid #163E4F;
     margin: 2em 0;
     background: #0b1116;
 }
@@ -230,21 +235,23 @@ li {
 
 .prompt-inner {
     padding: 1em;
-    border-top: 1px solid #163E4F;
+    border-top: 2px solid #163E4F;
 }
 
-/* Код промпта: размер как у P, цвет #106085 */
 .prompt-inner pre {
     background: #000;
     padding: 1em;
-    border: 1px solid #163E4F;
-    overflow-x: auto;
+    border: 2px solid #163E4F;
     font-family: 'GrimoireMono', monospace;
     color: #106085;
     white-space: pre-wrap;
     margin-bottom: 1em;
-    font-size: 1em; /* Размер как у параграфа */
+    font-size: 1em;
     line-height: 1.5;
+    
+    /* Жесткое ограничение без скролла */
+    max-height: 8em;       /* ~4-5 строк текста */
+    overflow: hidden;      /* Обрезаем всё лишнее, скроллбара нет */
 }
 
 /* ЕДИНЫЙ СТИЛЬ КНОПОК (Исправлено для одинаковой высоты) */
@@ -284,7 +291,7 @@ li {
 .account-warning {
     margin-top: 3em;
     padding-top: 1em;
-    border-top: 1px solid #163E4F;
+    border-top: 2px solid #163E4F;
 }
 
 /* =========================================
@@ -294,7 +301,7 @@ li {
     text-align: center;
     margin: 4em 0;
     padding: 2em 0;
-    border-top: 1px solid #163E4F;
+    border-top: 2px solid #163E4F;
 }
 
 /* Кнопка футера в том же стиле */
