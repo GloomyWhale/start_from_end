@@ -402,4 +402,35 @@ li {
     .fork-cell:last-child {
         border-bottom: none;
     }
+
+/* =========================================
+   СПИСОК ОРУЖИЯ (Шаг 5) - ИСПРАВЛЕНО
+   ========================================= */
+.weapon-list {
+    max-width: 768px;
+    margin: 2em auto 0;
+}
+
+.weapon-item {
+    padding: 1em 0;
+}
+
+.weapon-item h3 {
+    margin-top: 0;
+    color: #7C18CE;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+.weapon-item p {
+    margin-bottom: 0.8em;
+}
+
+.weapon-item .note {
+    margin-top: 1em;
+    padding-top: 0.8em;
+    border-top: 1px solid #163E4F;
+}
+
 }
