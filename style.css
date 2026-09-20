@@ -34,17 +34,22 @@ body {
     line-height: 1.5;
 }
 
+/* Порядок LVHA: link → visited → hover → active */
 a {
     color: #7C18CE;
     text-decoration: underline;
     transition: color 0.2s ease;
 }
 
+a:visited {
+    color: #4a0e78;
+}
+
 a:hover {
     color: #ffffff !important;
 }
 
-a:visited, a:active {
+a:active {
     color: #4a0e78;
 }
 
@@ -77,6 +82,7 @@ a:visited, a:active {
 /* =========================================
    4. ТИПОГРАФИКА
    ========================================= */
+/* H1 — белый, КАПС */
 h1 {
     font-weight: 800;
     color: #ffffff;
@@ -88,6 +94,7 @@ h1 {
     text-transform: uppercase;
 }
 
+/* H2 — фиолетовый, без капса */
 h2 {
     font-weight: 800;
     color: #7C18CE;
@@ -95,6 +102,7 @@ h2 {
     margin-bottom: 0.8em;
     border-top: 2px solid #163E4F;
     padding-top: 0.8em;
+    text-transform: none;
 }
 
 h2 a {
@@ -105,11 +113,13 @@ h2 + h2 {
     margin-top: 1em;
 }
 
+/* H3 — БЕЛЫЙ как H1, без капса */
 h3 {
     font-weight: 800;
     color: #ffffff;
     margin-top: 2em;
     margin-bottom: 0.8em;
+    text-transform: none;
 }
 
 p {
@@ -228,9 +238,11 @@ li {
     border-top: 2px solid #163E4F;
 }
 
+/* Промпт — обрезка ровно на 6 строк с затуханием внизу */
 .prompt-inner pre {
+    box-sizing: border-box;
     background: #000;
-    padding: 1em;
+    padding: 0.8em;
     border: 2px solid #163E4F;
     font-family: 'GrimoireMono', monospace;
     color: #106085;
@@ -238,8 +250,10 @@ li {
     margin-bottom: 1em;
     font-size: 1em;
     line-height: 1.5;
-    max-height: 8em;
+/* 6 строк × 1.5em + padding 1.6em = 10.6em */    max-height: 10.6em;
     overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 65%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 65%, transparent 100%);
 }
 
 .button-row {
@@ -308,7 +322,7 @@ li {
 }
 
 /* =========================================
-   ТАБЛИЦА РАЗВИЛКИ (Шаг 4) - КНОПКИ-ЗАГОЛОВКИ
+   8. ТАБЛИЦА РАЗВИЛКИ (Шаг 4)
    ========================================= */
 .fork-table {
     width: 100%;
@@ -329,14 +343,13 @@ li {
     border-right: none;
 }
 
-/* Кнопка-заголовок (только она кликабельна) */
 .fork-btn {
     display: inline-block;
     text-decoration: none;
     font-weight: 800;
     font-family: 'GrimoireMono', monospace;
     padding: 0.6em 1.5em;
-    margin-bottom: 1em; /* Отступ до описания */
+    margin-bottom: 1em;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.2s;
@@ -344,7 +357,6 @@ li {
     box-sizing: border-box;
 }
 
-/* Описание под кнопкой */
 .fork-desc {
     font-size: 1em;
     line-height: 1.4;
@@ -352,7 +364,6 @@ li {
     color: #08CCD5;
 }
 
-/* Подпись внизу */
 .fork-footer {
     font-size: 0.9em;
     font-style: italic;
@@ -360,11 +371,9 @@ li {
     color: #08CCD5;
 }
 
-/* === ЦВЕТА И ХОВЕРЫ ДЛЯ КНОПОК === */
-
 /* Стабильность (Красный) */
 .stability .fork-btn {
-    background: #E63946; /* Заменил мадженту на красный */
+    background: #E63946;
     color: #ffffff;
     border-color: #E63946;
 }
@@ -386,25 +395,8 @@ li {
     color: #7C18CE;
 }
 
-/* Адаптив для мобилок */
-@media (max-width: 768px) {
-    .fork-table, .fork-table tbody, .fork-table tr, .fork-table td {
-        display: block;
-        width: 100% !important;
-    }
-    
-    .fork-cell {
-        border-right: none;
-        border-bottom: 2px solid #163E4F;
-        padding: 1.5em;
-    }
-    
-    .fork-cell:last-child {
-        border-bottom: none;
-    }
-
 /* =========================================
-   СПИСОК ОРУЖИЯ (Шаг 5) - ИСПРАВЛЕНО
+   9. СПИСОК ОРУЖИЯ (Шаг 5)
    ========================================= */
 .weapon-list {
     max-width: 768px;
@@ -417,9 +409,7 @@ li {
 
 .weapon-item h3 {
     margin-top: 0;
-    color: #7C18CE;
-    font-size: 1.1em;
-    text-transform: uppercase;
+    /* Убираем фиолетовый и капс — теперь наследуется от общего h3 (белый, без капса) */
     margin-bottom: 0.5em;
 }
 
@@ -433,4 +423,25 @@ li {
     border-top: 1px solid #163E4F;
 }
 
+/* =========================================
+   10. АДАПТИВ ДЛЯ МОБИЛОК
+   ========================================= */
+@media (max-width: 768px) {
+    .fork-table,
+    .fork-table tbody,
+    .fork-table tr,
+    .fork-table td {
+        display: block;
+        width: 100% !important;
+    }
+
+    .fork-cell {
+        border-right: none;
+        border-bottom: 2px solid #163E4F;
+        padding: 1.5em;
+    }
+
+    .fork-cell:last-child {
+        border-bottom: none;
+    }
 }
